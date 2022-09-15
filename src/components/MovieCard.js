@@ -11,14 +11,16 @@ const MovieCard = ({movieListState, setMovieListState})=>{
         event.preventDefault()
         let movies = await searchFilms()
         console.log(typeof(movies))
+        console.log(movies)
         setMovieListState(movies)
     }
     
     return (
         <form onSubmit ={loadMovies} className='usernames'>
-            {movieListState.map((title) => (
-                <h3>{title}</h3>
-            ))}
+            {movieListState.map((movies, index) => (<h3 key={index}>{movies.title}<br></br>{movies.actor}</h3>))}
+            {/* {movieListState.map((movies, index) => (
+                <h3 key={index}>{movies}</h3>
+            ))} */}
             <button type='submit'>Movie list</button>
         </form>
     )

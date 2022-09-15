@@ -106,19 +106,52 @@ export const deleteaccount = async (token) => {
     }
 }
 
+// export const displayUsers = async () => {
+//     try {
+//         const response = await fetch(`${process.env.REACT_APP_USER_API}list`, {
+//             method: "GET",
+//             headers: {"Content-Type": "application/json"}
+//         });
+//         const data = await response.json()
+//         const usernames = data.map(users => users.name)
+//         console.log(usernames)
+//         return usernames
+//     } catch (error)  {
+//         console.log(error)
+//     }
+// }
+
 export const searchFilms = async () => {
     try {
         console.log("inside search films")
-        // const req = await fetch('http://localhost:9000/movie/list', {
-        const req = await fetch(`${process.env.REACT_APP_MOVIE_API}list`, {
+        const response = await fetch(`${process.env.REACT_APP_MOVIE_API}list`, {
           method: "GET",
           headers: {"Content-Type": "application/json"}
         })
-        const res = await req.json()
-        const filmList = res.map(movie => movie)
-        return filmList
+        const data = await response.json()
+        let array = [...data.movieList]
+        
+        // const titleList = array.map(movie => movie.title)
+        // const actorList = array.map(movie => movie.actor)
+        // return titleList, actorList
+        const movieList = array.map((movie) =>
+        {
+            return {
+                title: movie.title,
+                actor: movie.actor
+            }
+        })
+        console.log(movieList)
+        return movieList
+        // setMovieState(movieList);
     } catch (error) {
         console.log(error)
     }
+    // const movieList = array.map((movie, index) =>
+    // {
+    //     return {
+    //         title: title,
+    //         actor: actor
+    //     }
+    // })
 }
-// setMovies(res)

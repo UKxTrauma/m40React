@@ -27,8 +27,8 @@ const App = () => {
       {user ? 
       <div className="navDiv">
         <div id="manageNav">
-          <AccountModal />
-          <MovieModal />
+          <AccountModal token={token}/>
+          <MovieModal token={token}/>
         </div>
         <div id="searchNav">
           <MovieSearch />

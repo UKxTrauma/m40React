@@ -43,13 +43,41 @@
     z-index: 2;
 }
 
-::placeholder{
+::placeholder {
     color:rgba(79, 181, 176, 0.592);
 }
 
-.userList {
+.outerUserList {
+    display: flex;
+    border: solid rgb(230, 15, 51);
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
     text-align: center;
+    /* align-items: center;
+    align-content: center;
+    align-self: center; */
+    /* font-size:0.7em; */
+    overflow: hidden;
+    width:100%;
+    height: auto;
+}
+
+.userList {
+    display: flex;
+    border: solid pink;
+    flex-direction: column;
+    text-align: center;
+    /* flex-wrap: wrap; */
+    /* text-align: end; */
+    /* align-self: center; */
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-content: flex-end; */
+    /* justify-self: center; */
+    /* font-size:1em; */
     overflow-y: scroll;
+    /* width:100%; */
 }
 .userList button {
     color: white;
@@ -65,15 +93,16 @@
 
 .showUser {
     display: flex;
+    flex-direction: column;
     text-align: center;
-    align-items: flex-end;
     justify-content: space-evenly;
-    width: 100%;
+    width: 80%;
+    height: 80%;
 }
 .showUser button {
     color: white;
     background: none;
-    border-style:hidden;
+    border-style: none;
     text-align: center;
     align-self: center;
     outline: solid rgba(0, 128, 0, 0);
@@ -90,9 +119,15 @@
 .showUser input:hover {
     box-shadow: 0em 0em 0.5em rgba(79, 181, 176, 0.592);
 }
-/* .hideUser {
+
+.rowMe {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hideUser {
     display: none;
-} */
+}
 
 ::-webkit-scrollbar {
     width: 20px;

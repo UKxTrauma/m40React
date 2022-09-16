@@ -21,7 +21,7 @@ const AccountDelete = ({token}) => {
     }
 
     return (
-        <form onSubmit ={submitHandler} className='showUser hideUser'>
+        <form onSubmit ={submitHandler} className="rowMe">
             <label> Delete your account:<br></br>
                 <input onChange={confirmation}
                 placeholder='type "DELETE" to confirm' />

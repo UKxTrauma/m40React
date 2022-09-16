@@ -1,8 +1,8 @@
-import React from 'react' 
+import React from 'react'
 import { useState } from "react";
 import { editPassword } from '../utils';
 
-const PasswordEdit = ({token}) => {
+const PasswordEdit = ({ token }) => {
     const [password, setPassword] = useState()
 
     const submitHandler = async (event) => {
@@ -11,7 +11,7 @@ const PasswordEdit = ({token}) => {
     }
 
     return (
-        <form onSubmit ={submitHandler} className='showUser hideUser'>
+        <form onSubmit={submitHandler} className="rowMe">
             <label> Update password:<br></br>
                 <input onChange={(event) => setPassword(event.target.value)}
                 placeholder='enter new password' />

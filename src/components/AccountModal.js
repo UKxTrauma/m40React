@@ -11,17 +11,22 @@ Modal.setAppElement('#root');
 const AccountModal = ({token}) => {
     const [accountStateModal, showAccountStateModal] = useState(false)
     function openAccountModal() { showAccountStateModal(true); }
-    function closeAccountModal() { showAccountStateModal(false); }
+    function closeAccountModal() { setToggle(false); showAccountStateModal(false); }
+    const [toggle, setToggle] = useState(false);
 
     return (
         <div className="imageBox">
             <button onClick={openAccountModal} id="account">Manage account</button>
             <Modal isOpen={accountStateModal} onRequestClose={closeAccountModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
-                <DisplayUsers />
-                <NameEdit token={token} />
-                <EmailEdit token={token} />
-                <PasswordEdit token={token} />
-                <AccountDelete token={token} />
+                <div className="outerUserList">
+                <DisplayUsers wide={toggle} setWide={setToggle}/>
+                </div>    
+                <div className={!toggle ? "showUser" : "hideUser"}>
+                    <NameEdit token={token} />
+                    <EmailEdit token={token} />
+                    <PasswordEdit token={token} />
+                    <AccountDelete token={token} />
+                </div>
             </Modal>
         </div>
     )

@@ -11,7 +11,7 @@ const NameEdit = ({token}) => {
     }
 
     return (
-        <form onSubmit ={submitHandler} className="showUser hideUser">
+        <form onSubmit ={submitHandler} className="rowMe">
             <label> Update name:<br></br>
                 <input onChange={(event) => setName(event.target.value)}
                 placeholder='enter new name' />

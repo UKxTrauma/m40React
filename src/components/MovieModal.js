@@ -17,7 +17,7 @@ const MovieModal = ({token}) => {
         <div className="imageBox">
             <button onClick={openMovieModal} id="movies">Manage Movies</button>
             <Modal isOpen={movieStateModal} onRequestClose={closeMovieModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
-                <MovieAdd />
+                <MovieAdd token={token} />
                 {/* <TitleEdit token={token} />
                 <ActorEdit token={token} />
                 <MovieDelete token={token} />

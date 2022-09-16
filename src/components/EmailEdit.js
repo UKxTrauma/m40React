@@ -11,8 +11,8 @@ const EmailEdit = ({token}) => {
     }
 
     return (
-        <form onSubmit ={submitHandler}>
-            <label> Update email:
+        <form onSubmit ={submitHandler} className='showUser hideUser'>
+            <label> Update email:<br></br>
                 <input onChange={(event) => setEmail(event.target.value)}
                 placeholder='enter new email' />
             </label>

@@ -14,11 +14,11 @@ const DisplayUsers = () => {
     }
 
     return (
-        <form onSubmit ={loadUsernames} className='usernames'>
+        <form onSubmit ={loadUsernames} className='userList'>
+            <button type='submit'>DISPLAY ALL USERS</button>
                 {usernames.map((user, index) => (
                     <h3 key={index}>{user}</h3>
                 ))}
-            <button type='submit'>User list</button>
         </form>
     )
 }

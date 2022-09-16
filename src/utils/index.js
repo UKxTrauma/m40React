@@ -106,21 +106,6 @@ export const deleteaccount = async (token) => {
     }
 }
 
-// export const displayUsers = async () => {
-//     try {
-//         const response = await fetch(`${process.env.REACT_APP_USER_API}list`, {
-//             method: "GET",
-//             headers: {"Content-Type": "application/json"}
-//         });
-//         const data = await response.json()
-//         const usernames = data.map(users => users.name)
-//         console.log(usernames)
-//         return usernames
-//     } catch (error)  {
-//         console.log(error)
-//     }
-// }
-
 export const searchFilms = async () => {
     try {
         console.log("inside search films")
@@ -131,9 +116,6 @@ export const searchFilms = async () => {
         const data = await response.json()
         let array = [...data.movieList]
         
-        // const titleList = array.map(movie => movie.title)
-        // const actorList = array.map(movie => movie.actor)
-        // return titleList, actorList
         const movieList = array.map((movie) =>
         {
             return {
@@ -143,15 +125,7 @@ export const searchFilms = async () => {
         })
         console.log(movieList)
         return movieList
-        // setMovieState(movieList);
     } catch (error) {
         console.log(error)
     }
-    // const movieList = array.map((movie, index) =>
-    // {
-    //     return {
-    //         title: title,
-    //         actor: actor
-    //     }
-    // })
 }

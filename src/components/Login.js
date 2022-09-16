@@ -13,17 +13,12 @@ const Login = ({setter, setToken}) => {
     }
 
     return (
-        <form onSubmit ={submitHandler}>
-            <label> Email:
-                <input onChange={(event) => setEmail(event.target.value)} />
-            </label>
+        <form onSubmit ={submitHandler} className="formStyle">
+                <input onChange={(event) => setEmail(event.target.value)} placeholder="email"/>
             <br></br>
-
-            <label> password:
-                <input onChange={(event) => setPassword(event.target.value)} />
-            </label>
+                <input onChange={(event) => setPassword(event.target.value)} placeholder="password"/>
             <br></br>
-            <button type='submit'>Click here to login</button>
+            <button type='submit'>LOGIN</button>
         </form>
     )
 }

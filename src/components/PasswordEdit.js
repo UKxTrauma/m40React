@@ -11,8 +11,8 @@ const PasswordEdit = ({token}) => {
     }
 
     return (
-        <form onSubmit ={submitHandler}>
-            <label> Update password:
+        <form onSubmit ={submitHandler} className='showUser hideUser'>
+            <label> Update password:<br></br>
                 <input onChange={(event) => setPassword(event.target.value)}
                 placeholder='enter new password' />
             </label>

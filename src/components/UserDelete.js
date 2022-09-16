@@ -1,6 +1,6 @@
 import React from 'react' 
 import { useState } from "react";
-import { deleteaccount } from '../utils';
+import { deleteAccount } from '../utils';
 
 const AccountDelete = ({token}) => {
     const [confirm, setConfirm] = useState(false)
@@ -8,7 +8,7 @@ const AccountDelete = ({token}) => {
     const submitHandler = async (event) => {
         event.preventDefault()
         if(confirm){
-            await deleteaccount(token)
+            await deleteAccount(token)
         }
     }
 

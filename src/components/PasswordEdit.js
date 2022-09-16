@@ -1,13 +1,13 @@
 import React from 'react' 
 import { useState } from "react";
-import { editpassword } from '../utils';
+import { editPassword } from '../utils';
 
 const PasswordEdit = ({token}) => {
     const [password, setPassword] = useState()
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        await editpassword(token, password)
+        await editPassword(token, password)
     }
 
     return (

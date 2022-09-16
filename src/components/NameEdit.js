@@ -1,13 +1,13 @@
 import React from 'react' 
 import { useState } from "react";
-import { editname } from '../utils';
+import { editName } from '../utils';
 
 const NameEdit = ({token}) => {
     const [name, setName] = useState()
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        await editname(token, name)
+        await editName(token, name)
     }
 
     return (

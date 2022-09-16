@@ -51,7 +51,7 @@ export const displayUsers = async () => {
     }
 }
 
-export const editname = async (token, name) => {
+export const editName = async (token, name) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}editname`, {
             method: "PUT",
@@ -65,7 +65,7 @@ export const editname = async (token, name) => {
     }
 }
 
-export const editemail = async (token, email) => {
+export const editEmail = async (token, email) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}editemail`, {
             method: "PUT",
@@ -79,7 +79,7 @@ export const editemail = async (token, email) => {
     }
 }
 
-export const editpassword = async (token, password) => {
+export const editPassword = async (token, password) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}editpassword`, {
             method: "PUT",
@@ -93,7 +93,7 @@ export const editpassword = async (token, password) => {
     }
 }
 
-export const deleteaccount = async (token) => {
+export const deleteAccount = async (token) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_USER_API}delete`, {
             method: "DELETE",
@@ -106,7 +106,7 @@ export const deleteaccount = async (token) => {
     }
 }
 
-export const searchFilms = async () => {
+export const listFilms = async () => {
     try {
         console.log("inside search films")
         const response = await fetch(`${process.env.REACT_APP_MOVIE_API}list`, {
@@ -126,6 +126,77 @@ export const searchFilms = async () => {
         console.log(movieList)
         return movieList
     } catch (error) {
+        console.log(error)
+    }
+}
+
+export const movieAdd = async (title, actor) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_MOVIE_API}add`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                'title': title,
+                "actor": actor
+            })
+        });
+        const data = await response.json()
+        console.log(data)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const movieDelete = async (token) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_MOVIE_API}delete`, {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`}
+        });
+        const data = await response.json()
+        console.log(data)
+    } catch (error)  {
+        console.log(error)
+    }
+}
+
+export const moviesDelete = async (token) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_MOVIE_API}delete`, {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`}
+        });
+        const data = await response.json()
+        console.log(data)
+    } catch (error)  {
+        console.log(error)
+    }
+}
+
+export const editTitle = async (token, title) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_MOVIE_API}edittitle`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
+            body: JSON.stringify({"title": title})
+        });
+        const data = await response.json()
+        console.log(data)
+    } catch (error)  {
+        console.log(error)
+    }
+}
+
+export const editActor = async (token, email) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_MOVIE_API}editemail`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
+            body: JSON.stringify({"email": email})
+        });
+        const data = await response.json()
+        console.log(data)
+    } catch (error)  {
         console.log(error)
     }
 }

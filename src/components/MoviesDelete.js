@@ -1,14 +1,14 @@
 import React from 'react' 
 import { useState } from "react";
-import { movieDelete } from '../utils';
+import { moviesDelete } from '../utils';
 
-const MovieDelete = ({token}) => {
+const MoviesDelete = ({token}) => {
     const [confirm, setConfirm] = useState(false)
 
     const submitHandler = async (event) => {
         event.preventDefault()
         if(confirm){
-            await movieDelete(token)
+            await moviesDelete(token)
         }
     }
 
@@ -32,4 +32,4 @@ const MovieDelete = ({token}) => {
     )
 }
 
-export default MovieDelete
+export default MoviesDelete

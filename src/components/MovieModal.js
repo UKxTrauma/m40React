@@ -5,6 +5,7 @@ import MovieAdd from "./MovieAdd";
 import TitleEdit from "./TitleEdit";
 import ActorEdit from "./ActorEdit";
 import MovieDelete from "./MovieDelete";
+import MoviesDelete from "./MoviesDelete";
 Modal.setAppElement('#root');
 
 const MovieModal = ({token}) => {
@@ -17,9 +18,10 @@ const MovieModal = ({token}) => {
             <button onClick={openMovieModal} id="movies">Manage Movies</button>
             <Modal isOpen={movieStateModal} onRequestClose={closeMovieModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
                 <MovieAdd />
-                <TitleEdit token={token} />
+                {/* <TitleEdit token={token} />
                 <ActorEdit token={token} />
                 <MovieDelete token={token} />
+                <MoviesDelete token={token} /> */}
             </Modal>
         </div>
     )

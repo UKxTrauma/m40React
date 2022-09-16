@@ -1,12 +1,12 @@
 import React from 'react' 
 import { useState } from "react";
-import { searchFilms } from '../utils';
+import { listFilms } from '../utils';
 
 
-const MovieCard = ({movieListState, setMovieListState})=>{
+const DisplayMovies = ({movieListState, setMovieListState})=>{
     const loadMovies = async (event) => {
         event.preventDefault()
-        let movies = await searchFilms()
+        let movies = await listFilms()
         console.log(typeof(movies))
         console.log(movies)
         setMovieListState(movies)
@@ -20,4 +20,4 @@ const MovieCard = ({movieListState, setMovieListState})=>{
     )
 }
 
-export default MovieCard;
+export default DisplayMovies;

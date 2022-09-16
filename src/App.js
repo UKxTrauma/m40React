@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css"
-import MovieCard from "./components/MovieCard";
+import DisplayMovies from "./components/DisplayMovies";
 import UserModal from "./components/UserModal";
 import AccountModal from "./components/AccountModal";
 import MovieModal from "./components/MovieModal";
@@ -32,7 +32,7 @@ const App = () => {
         </div>
         <div id="searchNav">
           <MovieSearch />
-          <MovieCard movieListState={movieListState} setMovieListState={setMovieListState}/>
+          <DisplayMovies movieListState={movieListState} setMovieListState={setMovieListState}/>
         </div>
       </div>
       : <h2>Login to search for a movie</h2>}

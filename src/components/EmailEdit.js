@@ -1,13 +1,13 @@
 import React from 'react' 
 import { useState } from "react";
-import { editemail } from '../utils';
+import { editEmail } from '../utils';
 
 const EmailEdit = ({token}) => {
     const [email, setEmail] = useState()
 
     const submitHandler = async (event) => {
         event.preventDefault()
-        await editemail(token, email)
+        await editEmail(token, email)
     }
 
     return (

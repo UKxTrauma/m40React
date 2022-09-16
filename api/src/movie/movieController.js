@@ -76,11 +76,36 @@ exports.deleteMovies = async (req, res) => {
     }
 }
 
-exports.editMovie = async (req, res) =>
+// exports.editMovie = async (req, res) =>
+// {
+//     try
+//     {
+//         await Movie.updateOne({ title: req.body.title, actor: req.body.actor }, { title: req.body.newT, actor: req.body.newA })
+//         res.status(200).send(await Movie.find({}))
+//     } catch (error)
+//     {
+//         res.status(400).send(console.log("Failed to list items"))
+//         console.log(error)
+//     }
+// }
+
+exports.editTitle = async (req, res) =>
 {
     try
     {
-        await Movie.updateOne({ title: req.body.title, actor: req.body.actor }, { title: req.body.newT, actor: req.body.newA })
+        await Movie.updateOne({ title: req.body.title }, { title: req.body.newT })
+        res.status(200).send(await Movie.find({}))
+    } catch (error)
+    {
+        res.status(400).send(console.log("Failed to list items"))
+        console.log(error)
+    }
+}
+exports.editActor = async (req, res) =>
+{
+    try
+    {
+        await Movie.updateOne({ actor: req.body.actor }, { actor: req.body.newA })
         res.status(200).send(await Movie.find({}))
     } catch (error)
     {

@@ -1,21 +1,26 @@
-import React from 'react' 
+import React from 'react'
 import { useState } from "react";
 import { listFilms } from '../utils';
 
 
-const DisplayMovies = ({movieListState, setMovieListState})=>{
+const DisplayMovies = ({ movieListState, setMovieListState }) => {
+    // const [usernames, setUsernames] = useState([])
+    const [toggle, setToggle] = useState(false);
     const loadMovies = async (event) => {
         event.preventDefault()
         let movies = await listFilms()
-        console.log(typeof(movies))
         console.log(movies)
         setMovieListState(movies)
     }
-    
+
     return (
-        <form onSubmit ={loadMovies} className='usernames'>
-            <button type='submit' id='movie'>Movie list</button>
-            {movieListState.map((movies, index) => (<h3 key={index}>{movies.title}<br></br>{movies.actor}</h3>))}
+        <form onSubmit={loadMovies} className='outerUserList2'>
+            <button type='submit' onClick={() => setToggle(!toggle)} id='movie'>Movie list</button>
+            <div className={toggle ? "showUser" : "hideUser"}>
+                <div className="movieList">
+                    {movieListState.map((movies, index) => (<h3 key={index}>Title: &nbsp;&nbsp;&nbsp;{movies.title}<br></br>Lead: &nbsp;&nbsp;&nbsp;{movies.actor}</h3>))}
+                </div>
+            </div>
         </form>
     )
 }

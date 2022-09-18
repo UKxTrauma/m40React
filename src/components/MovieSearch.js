@@ -3,7 +3,7 @@ import { useState } from "react";
 import { listFilms } from '../utils';
 
 
-const MovieSearch = ({movieListState, setMovieListState})=>{
+const MovieSearch = ({movieListState, setMovieListState, toggle})=>{
     const findMovies = async (event) => {
         event.preventDefault()
         let movies = await listFilms()
@@ -13,10 +13,13 @@ const MovieSearch = ({movieListState, setMovieListState})=>{
     }
     
     return (
-    <form onSubmit ={findMovies}>
-        <input onChange={(event) => findMovies(event.target.value)} placeholder="search for a movie"/>
-        <button type='submit' id='searchButt'>🔍</button>
-    </form>
+        <form onSubmit ={findMovies} >
+            
+            <div className={!toggle ? "showSearch" : "hideSearch"}>
+            <input onChange={(event) => findMovies(event.target.value)} placeholder="search for a movie"/>
+            </div>
+            <button type='submit' id='searchButt'>🔍</button>
+        </form>
         // <form onSubmit ={loadMovies} className='usernames'>
         //     <button type='submit' id='movie'>Movie list</button>
         //     {movieListState.map((movies, index) => (<h3 key={index}>{movies.title}<br></br>{movies.actor}</h3>))}

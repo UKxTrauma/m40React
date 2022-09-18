@@ -8,7 +8,7 @@ import MovieDelete from "./MovieDelete";
 import MoviesDelete from "./MoviesDelete";
 Modal.setAppElement('#root');
 
-const MovieModal = ({token}) => {
+const MovieModal = () => {
     const [movieStateModal, showMovieStateModal] = useState(false)
     function openMovieModal() { showMovieStateModal(true); }
     function closeMovieModal() { showMovieStateModal(false); }
@@ -17,7 +17,7 @@ const MovieModal = ({token}) => {
         <div className="imageBox">
             <button onClick={openMovieModal} id="movies">Manage Movies</button>
             <Modal isOpen={movieStateModal} onRequestClose={closeMovieModal} className="modalContent" contentLabel="Example Modal" overlayClassName="modalZ">
-                <MovieAdd token={token} />
+                <MovieAdd />
                 {/* <TitleEdit token={token} />
                 <ActorEdit token={token} />
                 <MovieDelete token={token} />

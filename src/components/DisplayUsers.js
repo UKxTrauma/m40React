@@ -3,11 +3,8 @@ import { useState } from "react";
 import { displayUsers } from '../utils';
 
 const DisplayUsers = ({wide, setWide}) => {
-
     const [usernames, setUsernames] = useState([])
-
     const [toggle, setToggle] = useState(false);
-
     const loadUsernames = async (event) => {
         event.preventDefault()
         let users = await displayUsers()
@@ -16,9 +13,8 @@ const DisplayUsers = ({wide, setWide}) => {
     }
 
     return (
-        // onClick={() => setToggle(!toggle)}
         <form onSubmit ={loadUsernames}>
-            <button type='submit' onClick={() => {setWide(!wide); setToggle(!toggle)}} >DISPLAY ALL USERS</button>
+            <button type='submit' onClick={() => {setWide(!wide); setToggle(!toggle)}} className="userButt">DISPLAY ALL USERS</button>
                 <div className={toggle ? "showUser" : "hideUser"}>
                     <div className="userList">
                         {usernames.map((user, index) => (

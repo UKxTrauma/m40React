@@ -1,18 +1,18 @@
 Check screenshots for images of the working functionality
 
 list of working CRUD:
-account:
+(account:
     log-in,
-    register
-user:
+    register)
+(user:
     edit name,
     edit email,
     edit password,
     delete logged-in user,
-    view users
-movie:
+    view users)
+(movie:
     add movie entry (title/actor combo),
-    list movies
+    list movies)
 
 
 

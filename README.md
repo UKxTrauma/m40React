@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+Check screenshots for images of the working functionality
+
+list of working CRUD:
+account:
+    log-in,
+    register
+user:
+    edit name,
+    edit email,
+    edit password,
+    delete logged-in user,
+    view users
+movie:
+    add movie entry (title/actor combo),
+    list movies
+
+
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +91,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

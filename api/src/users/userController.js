@@ -27,14 +27,12 @@ exports.listUsers = async (req, res) => {
     try {
         let userList = await Users.find({});
         if (userList.length > 0) {
-            console.log("inside listUsers")
         res.status(200).send(await Users.find({}));
         } else {
             console.log("Nothing to display")
             res.status(400).send({error: "request failed, no users to display"})
         }
     } catch (error) {
-        console.log("error in listUsers")
         res.status(500).send({error:"internal server error"})
         console.log(error)
     }
@@ -46,11 +44,9 @@ exports.userDelete = async (req, res) => {
         await Users.findByIdAndDelete({ _id : req.user._id })
         res.status(200).send("Account deleted")
         } else {
-            console.log("Please log in")
             res.status(400).send({error: "request failed, please log in"})
         }
     } catch (error) {
-        console.log("error in userDeleteOne")
         res.status(500).send({error:"internal server error"})
         console.log(error)
     }

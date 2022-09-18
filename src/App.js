@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css"
 import DisplayMovies from "./components/DisplayMovies";
 import UserModal from "./components/UserModal";
@@ -9,11 +9,10 @@ import animated from './images/animated.mp4';
 
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("")
-  const [movies, setMovies] = useState([])
   const [movieListState, setMovieListState] = useState([])
   const [user, setUser] = useState()
   const [token, setToken] = useState("")
+  const [toggle, setToggle] = useState(false);
 
   return (
     <div className="main">
@@ -29,7 +28,7 @@ const App = () => {
             <br></br>
             <h2>log-in for more functionality</h2>
             <div>
-              <UserModal setter={setUser} setToken={setToken} movieListState={movieListState} setMovieListState={setMovieListState}/>
+              <UserModal setter={setUser} setToken={setToken} movieListState={movieListState} setMovieListState={setMovieListState} toggle={toggle} setToggle={setToggle} />
               <br></br>
             </div>
           </>
@@ -42,11 +41,16 @@ const App = () => {
             <div className="navDiv">
               <div id="manageNav">
                 <AccountModal token={token} />
-                <DisplayMovies movieListState={movieListState} setMovieListState={setMovieListState} />
+                <DisplayMovies movieListState={movieListState} setMovieListState={setMovieListState} toggle={toggle} setToggle={setToggle} />
                 <MovieModal />
               </div>
               <div id="searchNav">
                 <MovieSearch />
+              </div>
+              <div className="movieList">
+                <div className={!toggle ? "showUser" : "hideUser"}>
+                  {movieListState.map((movies, index) => (<div><h3 key={index}>Title: &nbsp;&nbsp;&nbsp;{movies.title}<br></br>Lead: &nbsp;&nbsp;&nbsp;{movies.actor}</h3></div>))}
+                </div>
               </div>
             </div>
           </>}

@@ -1,14 +1,13 @@
 import React from 'react' 
-import { useState } from "react";
 import { listFilms } from '../utils';
 
 
-const MovieSearch = ({movieListState, setMovieListState, toggle})=>{
+const MovieSearch = ({ setMovieListState, toggle})=>{
     const findMovies = async (event) => {
         event.preventDefault()
         let movies = await listFilms()
-        console.log(typeof(movies))
-        console.log(movies)
+        // console.log(typeof(movies))
+        // console.log(movies)
         setMovieListState(movies)
     }
     

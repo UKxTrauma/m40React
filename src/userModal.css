@@ -1,7 +1,6 @@
 .modalBox {
     display: flex;
     justify-content: center;
-    /* border: solid pink; */
 }
 .modalBox button {
     width: 10vw;
@@ -76,12 +75,14 @@
 
 .movieList {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    /* flex-direction: column; */
+    /* text-align: center; */
+    /* align-self: center; */
     overflow-y: scroll;
-    text-align: center;
-    align-self: center;
-    overflow-y: scroll;
-
+    padding-left: 20px;
+    margin-top: 2em;
+    height: 50vh;
 }
 
 .formStyle {

@@ -41,17 +41,6 @@
     overflow: hidden;
     width:100%;
     height: auto;
-    /* border: solid pink; */
-}
-
-.outerUserList2 {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    overflow: hidden;
-    width:15vw;
-    height: auto;
-    border: solid pink;
 }
 
 .userList {

@@ -108,7 +108,6 @@ export const deleteAccount = async (token) => {
 
 export const listFilms = async () => {
     try {
-        console.log("inside search films")
         const response = await fetch(`${process.env.REACT_APP_MOVIE_API}list`, {
           method: "GET",
           headers: {"Content-Type": "application/json"}
@@ -123,7 +122,6 @@ export const listFilms = async () => {
                 actor: movie.actor
             }
         })
-        console.log(movieList)
         return movieList
     } catch (error) {
         console.log(error)
@@ -140,8 +138,9 @@ export const movieAdd = async (title, actor) => {
                 "actor": actor
             })
         });
-        const data = await response.json()
-        console.log(data)
+        await response.json()
+        // const data = await response.json()
+        // console.log(data)
     } catch (error) {
         console.log(error)
     }
@@ -153,8 +152,9 @@ export const movieDelete = async (token) => {
             method: "DELETE",
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`}
         });
-        const data = await response.json()
-        console.log(data)
+        await response.json()
+        // const data = await response.json()
+        // console.log(data)
     } catch (error)  {
         console.log(error)
     }
@@ -166,8 +166,9 @@ export const moviesDelete = async (token) => {
             method: "DELETE",
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`}
         });
-        const data = await response.json()
-        console.log(data)
+        await response.json()
+        // const data = await response.json()
+        // console.log(data)
     } catch (error)  {
         console.log(error)
     }
@@ -180,8 +181,9 @@ export const editTitle = async (token, title) => {
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
             body: JSON.stringify({"title": title})
         });
-        const data = await response.json()
-        console.log(data)
+        await response.json()
+        // const data = await response.json()
+        // console.log(data)
     } catch (error)  {
         console.log(error)
     }
@@ -194,8 +196,9 @@ export const editActor = async (token, email) => {
             headers: {"Content-Type": "application/json", "Authorization":`Bearer ${token}`},
             body: JSON.stringify({"email": email})
         });
-        const data = await response.json()
-        console.log(data)
+        await response.json()
+        // const data = await response.json()
+        // console.log(data)
     } catch (error)  {
         console.log(error)
     }

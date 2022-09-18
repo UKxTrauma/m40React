@@ -8,7 +8,6 @@ const DisplayUsers = ({wide, setWide}) => {
     const loadUsernames = async (event) => {
         event.preventDefault()
         let users = await displayUsers()
-        console.log(users)
         setUsernames(users)
     }
 
